@@ -7,17 +7,30 @@ export default function CountryCard({
 }) {
   return (
     <>
-      <a href='#'>
-        <article>
-          <img src={flags} alt={name} />
+      <a
+        href='#'
+        className='transition duration-200 ease-in-out hover:translate-y-[-5px] hover:shadow-lg'>
+        <article className='flex flex-col h-full bg-element-color rounded-md shadow-md animate-fadeInUp'>
+          <img
+            src={flags}
+            className='w-full object-cover rounded-t-md aspect-[16/10]'
+            alt={name}
+          />
 
-          <div>
-            <h2>{name}</h2>
+          <div className='pt-4 pb-6 px-6 text-text-color'>
+            <h2 className='text-xl font-bold'>{name}</h2>
 
-            <ul>
-              <li>Population: {population.toLocaleString("en-US")}</li>
-              <li>Region: {region}</li>
-              <li>Capital: {capital}</li>
+            <ul className='mt-2'>
+              <li>
+                <strong>Population:</strong>{" "}
+                {population.toLocaleString("en-US")}
+              </li>
+              <li>
+                <strong>Region:</strong> {region}
+              </li>
+              <li>
+                <strong>Capital:</strong> {capital}
+              </li>
             </ul>
           </div>
         </article>
