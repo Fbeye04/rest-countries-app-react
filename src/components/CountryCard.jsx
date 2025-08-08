@@ -10,14 +10,14 @@ export default function CountryCard({
       <a
         href='#'
         className='transition duration-200 ease-in-out hover:translate-y-[-5px] hover:shadow-lg'>
-        <article className='flex flex-col h-full bg-element-color rounded-md shadow-md animate-fadeInUp'>
+        <article className='flex flex-col h-full bg-element-color dark:bg-dark-element rounded-md shadow-md animate-fadeInUp'>
           <img
             src={flags}
             className='w-full object-cover rounded-t-md aspect-[16/10]'
             alt={name}
           />
 
-          <div className='pt-4 pb-6 px-6 text-text-color'>
+          <div className='pt-4 pb-6 px-6 text-text-color dark:text-dark-text'>
             <h2 className='text-xl font-bold'>{name}</h2>
 
             <ul className='mt-2'>

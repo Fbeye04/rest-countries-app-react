@@ -5,10 +5,33 @@ import CountryCard from "./components/CountryCard.jsx";
 import DetailPage from "./components/DetailPage.jsx";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode) {
+      return JSON.parse(savedMode);
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [regionFilter, setRegionFilter] = useState("");
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   useEffect(() => {
     fetch(
@@ -28,8 +51,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <main>
+      <Header isDarkMode={darkMode} onToggle={toggleDarkMode} />
+      <main className='bg-bg-color dark:bg-dark-bg transition-colors duration-300'>
         {!selectedCountry ? (
           <section className='py-8'>
             <div className='md:w-[95%] lg:w-[90%] md:mx-auto'>
