@@ -58,8 +58,8 @@ git clone [https://github.com/Fbeye04/rest-countries-app-react](https://github.c
 cd YOUR_REPO_NAME
 
 # 3. Install all required dependencies
-npm install
+pnpm install
 
 # 4. Run the development server
-npm run dev
+pnpm run dev
 ```
