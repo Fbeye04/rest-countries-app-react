@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import Controls from "../components/Controls.jsx";
 import CountryCard from "../components/CountryCard.jsx";
 
-export default function HomePage() {
+export default function HomePage({
+  searchTerm,
+  setSearchTerm,
+  regionFilter,
+  setRegionFilter,
+}) {
   const [countries, setCountries] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [regionFilter, setRegionFilter] = useState("");
   const [visibleCountries, setVisibleCountries] = useState(12);
 
   useEffect(() => {
@@ -53,7 +56,7 @@ export default function HomePage() {
         <div className='w-full'>
           <button
             onClick={handleLoadMore}
-            className='border-none bg-element-color dark:bg-dark-element py-4 px-6 shadow-md flex items-center cursor-pointer text-text-color dark:text-dark-text my-0 mx-auto mt-8 rounded-md'>
+            className='border-none bg-element-color dark:bg-dark-element py-4 px-6 shadow-md flex items-center cursor-pointer text-text-color dark:text-dark-text font-bold my-0 mx-auto mt-8 rounded-md'>
             Load More
           </button>
         </div>

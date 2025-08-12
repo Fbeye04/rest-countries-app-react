@@ -118,7 +118,7 @@ export default function DetailPage() {
                 Border Countries:{" "}
               </h3>
 
-              <div className='flex flex-wrap lg:flex-nowrap gap-3 mt-4 md:mt-0'>
+              <div className='flex flex-wrap gap-3 mt-4 md:mt-0'>
                 {borderCountries.length > 0 ? (
                   borderCountries.map((border) => (
                     <Link

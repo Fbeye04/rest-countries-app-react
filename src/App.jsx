@@ -13,6 +13,9 @@ function App() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [regionFilter, setRegionFilter] = useState("");
+
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -33,7 +36,17 @@ function App() {
       <Header isDarkMode={darkMode} onToggle={toggleDarkMode} />
       <main className='bg-bg-color dark:bg-dark-bg transition-colors duration-300 grow flex flex-col min-h-screen'>
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route
+            path='/'
+            element={
+              <HomePage
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                regionFilter={regionFilter}
+                setRegionFilter={setRegionFilter}
+              />
+            }
+          />
           <Route path='/country/:countryCode' element={<DetailPage />} />
         </Routes>
       </main>
