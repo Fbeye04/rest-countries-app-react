@@ -2,9 +2,9 @@
 
 An interactive web application that allows users to explore data on countries around the world, built using React and the REST Countries API. This project is an implementation of a challenge by Frontend Mentor.
 
-**[Live Demo]()**
+**[Live Demo](https://rest-countries-app-react.vercel.app/)**
 
-![Screenshot World Explorer]()
+![Screenshot World Explorer](./src/assets/Screenshot.png)
 
 ---
 
